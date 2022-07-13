@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  nginx:
+    container_name: nginx
+    build:
+      context: .
+    ports:
+      - '8080:80' # local port:container port
+      - '1935:1935' # local port:container port
+    volumes:
+      - './pi_nginx.conf:/etc/nginx/nginx.conf' # local path:container path
